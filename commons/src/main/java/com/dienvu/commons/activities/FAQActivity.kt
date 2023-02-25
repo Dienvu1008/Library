@@ -1,0 +1,61 @@
+package com.dienvu.commons.activities
+
+import android.os.Bundle
+import android.text.Html
+import android.text.method.LinkMovementMethod
+import android.view.LayoutInflater
+import android.view.Menu
+import android.widget.LinearLayout
+import com.dienvu.commons.R
+import com.dienvu.commons.extensions.*
+import com.dienvu.commons.helpers.APP_FAQ
+import com.dienvu.commons.helpers.APP_ICON_IDS
+import com.dienvu.commons.helpers.APP_LAUNCHER_NAME
+import com.dienvu.commons.models.FAQItem
+import kotlinx.android.synthetic.main.activity_faq.*
+import kotlinx.android.synthetic.main.item_faq.view.*
+import java.util.*
+
+class FAQActivity : BaseSimpleActivity() {
+    override fun getAppIconIDs() = intent.getIntegerArrayListExtra(APP_ICON_IDS) ?: ArrayList()
+
+    override fun getAppLauncherName() = intent.getStringExtra(APP_LAUNCHER_NAME) ?: ""
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_faq)
+
+        val dividerMargin = resources.getDimension(R.dimen.medium_margin).toInt()
+        val titleColor = getAdjustedPrimaryColor()
+        val textColor = baseConfig.textColor
+
+        val inflater = LayoutInflater.from(this)
+        val faqItems = intent.getSerializableExtra(APP_FAQ) as ArrayList<FAQItem>
+        faqItems.forEach {
+            val faqItem = it
+            inflater.inflate(R.layout.item_faq, null).apply {
+                background.applyColorFilter(baseConfig.backgroundColor.getContrastColor())
+                faq_title.apply {
+                    text = if (faqItem.title is Int) getString(faqItem.title) else faqItem.title as String
+                    setTextColor(titleColor)
+                }
+
+                faq_text.apply {
+                    text = if (faqItem.text is Int) Html.fromHtml(getString(faqItem.text)) else faqItem.text as String
+                    setTextColor(textColor)
+                    setLinkTextColor(getAdjustedPrimaryColor())
+
+                    movementMethod = LinkMovementMethod.getInstance()
+                    removeUnderlines()
+                }
+                faq_holder.addView(this)
+                (layoutParams as LinearLayout.LayoutParams).bottomMargin = dividerMargin
+            }
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        updateMenuItemColors(menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+}

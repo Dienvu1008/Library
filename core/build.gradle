@@ -1,0 +1,9 @@
+plugins{
+    id 'com.android.library'
+}
+android{
+    compileSdk 33
+}
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+}

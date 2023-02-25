@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.dienvu.commons">
+
+    <queries>
+        <package android:name="com.dienvu.thankyou.debug" />
+        <package android:name="com.dienvu.thankyou" />
+    </queries>
+
+    <uses-feature
+        android:name="android.hardware.faketouch"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.screen.portrait"
+        android:required="false" />
+
+    <uses-permission
+        android:name="android.permission.USE_BIOMETRIC"
+        tools:node="remove"/>
+
+    <!-- used by Reprint -->
+    <uses-permission
+        android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"
+        tools:node="remove"/>
+
+    <application android:supportsRtl="true">
+        <activity
+            android:name="com.dienvu.commons.activities.ContributorsActivity"
+            android:label="@string/contributors"
+            android:parentActivityName="com.dienvu.commons.activities.AboutActivity" />
+
+        <activity
+            android:name="com.dienvu.commons.activities.FAQActivity"
+            android:label="@string/frequently_asked_questions"
+            android:parentActivityName="com.dienvu.commons.activities.AboutActivity" />
+
+        <activity
+            android:name="com.dienvu.commons.activities.LicenseActivity"
+            android:label="@string/third_party_licences"
+            android:parentActivityName="com.dienvu.commons.activities.AboutActivity" />
+
+        <receiver
+            android:name="com.dienvu.commons.receivers.SharedThemeReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.dienvu.commons.SHARED_THEME_ACTIVATED" />
+                <action android:name="com.dienvu.commons.SHARED_THEME_UPDATED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
