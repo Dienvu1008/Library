@@ -15,10 +15,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Library"
 include ':app'
-include ':patternlockview'
-include ':rtl-viewpager'
-include ':rxjava2'
 include ':commons'
-include ':recyclerviewfastscroller'
-include ':core'
-include ':rxjava'

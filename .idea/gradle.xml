@@ -12,12 +12,6 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/commons" />
-            <option value="$PROJECT_DIR$/core" />
-            <option value="$PROJECT_DIR$/patternlockview" />
-            <option value="$PROJECT_DIR$/recyclerviewfastscroller" />
-            <option value="$PROJECT_DIR$/rtl-viewpager" />
-            <option value="$PROJECT_DIR$/rxjava" />
-            <option value="$PROJECT_DIR$/rxjava2" />
           </set>
         </option>
       </GradleProjectSettings>
