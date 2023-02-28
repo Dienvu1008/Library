@@ -18,7 +18,7 @@ import com.dienvu.commons.extensions.*
 import com.dienvu.commons.helpers.getFilePlaceholderDrawables
 import com.dienvu.commons.models.FileDirItem
 import com.dienvu.commons.views.MyRecyclerView
-import com.dienvu.recyclerviewfastscroller.RecyclerViewFastScroller
+import com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller
 import kotlinx.android.synthetic.main.item_filepicker_list.view.*
 import java.util.*
 import kotlin.collections.HashMap

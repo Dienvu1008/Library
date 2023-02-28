@@ -39,7 +39,7 @@
                 android:textSize="@dimen/bigger_text_size"
                 android:textStyle="italic" />
 
-            <com.dienvu.recyclerviewfastscroller.RecyclerViewFastScroller
+            <com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller
                 android:id="@+id/filepicker_fastscroller"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
                     android:scrollbars="none"
                     app:layoutManager="com.dienvu.commons.views.MyLinearLayoutManager" />
 
-            </com.dienvu.recyclerviewfastscroller.RecyclerViewFastScroller>
+            </com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller>
         </RelativeLayout>
 
         <RelativeLayout

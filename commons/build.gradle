@@ -40,11 +40,9 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation project(path: ':recyclerviewfastscroller')
-    implementation project(path: ':rtl-viewpager')
-    implementation project(path: ':rxjava2')
-    implementation project(path: ':rxjava')
-    implementation project(path: ':patternlockview')
-    implementation project(path: ':core')
+    implementation 'com.github.Dienvu1008:rtl-viewpager:940f12724f'
+    implementation 'com.github.Dienvu1008:reprint:992870cfff'
+    implementation 'com.github.Dienvu1008:PatternLockView:-SNAPSHOT'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20'
@@ -61,4 +59,7 @@ dependencies {
     api 'com.github.bumptech.glide:glide:4.13.2'
     kapt 'com.github.bumptech.glide:compiler:4.13.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
+
+
+
 }
